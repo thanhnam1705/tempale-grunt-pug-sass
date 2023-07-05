@@ -1,0 +1,12 @@
+//- breadcrumb part but it is mixin (must be included in _mixin/_all.pug)
+mixin breadcrumb({currentPage, links})
+  nav.breadcrumb
+    ol.breadcrumb-list&attributes(attributes)
+      li
+        a.trans.md(href=path+"/") トップ
+        a.trans.sm(href=path+"/") TOP
+      if links
+        each link in links
+          li
+            a.trans(href=link.href)!=link.text
+      li!=currentPage
