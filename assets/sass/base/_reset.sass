@@ -1,18 +1,6 @@
-@charset "utf-8"
+@charset "UTF-8"
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
   margin: 0
   padding: 0
   border: 0
@@ -20,25 +8,25 @@ time, mark, audio, video
   font-size: 100%
   vertical-align: baseline
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6
+h1, h2, h3, h4, h5, h6
   margin-bottom: 1.5em
   font-weight: bold
-  line-height: 1.5em
+
 h1
   font-size: 2em
+
 h2
   font-size: 1.8em
+
 h3
   font-size: 1.6em
+
 h4
   font-size: 1.4em
+
 h5
   font-size: 1.2em
+
 h6
   font-size: 1em
 
@@ -49,28 +37,33 @@ ol, ul
 table
   width: 100%
   margin-bottom: 1.5em
-  border-collapse: collapse
   border-spacing: 0
+  border-collapse: collapse
 
-table th,
-table td
-  padding: .5em
-  border: 1px solid #000
+  th, td
+    padding: 0.5em
+    border: 1px solid #000
 
-table th
-  font-weight: bold
+  th
+    font-weight: bold
 
 caption, th, td
-  text-align: left
   font-weight: normal
+  text-align: left
   vertical-align: middle
 
 q, blockquote
   quotes: none
 
-q:before, q:after, blockquote:before, blockquote:after
-  content: ""
-  content: none
+q
+  &::before, &::after
+    content: ""
+    content: none
+
+blockquote
+  &::before, &::after
+    content: ""
+    content: none
 
 a img
   border: none
@@ -78,10 +71,11 @@ a img
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary
   display: block
 
-*,
-*:before,
-*:after
+*
   box-sizing: border-box
+
+  &::before, &::after
+    box-sizing: border-box
 
 body *
   max-height: 99999em
@@ -90,58 +84,51 @@ body *
 p
   margin-bottom: 1.5em
 
-a:hover
-  text-decoration: none
+a
+  &:hover
+    text-decoration: none
 
-a:not([class])
-  color: inherit
+  &:not([class])
+    color: inherit
 
 img
   display: inline-block
-  vertical-align: middle
   max-width: 100%
   height: auto
+  vertical-align: middle
 
-input,
-label,
-select,
-button
+input, label, select, button
   line-height: inherit
 
-input,
-label,
-select,
-button,
-textarea
-  margin: 0
-  border: 0
-  padding: 0
-  word-break: normal
+input, label, select, button, textarea
   display: inline-block
+  margin: 0
+  padding: 0
+  border: 0
+  background: none
+  font: inherit
+  word-break: normal
   vertical-align: middle
   white-space: normal
-  background: none
   -webkit-appearance: none
-  font: inherit
 
 button:focus
   outline: 0
-input:focus,
-textarea:focus,
-select:focus
+
+input:focus, textarea:focus, select:focus
   outline: auto
 
 input[type=search]
   -webkit-appearance: textfield
 
-::-webkit-search-decoration
+\::-webkit-search-decoration
   display: none
 
 textarea
   overflow: auto
+  line-height: 1.5
   white-space: pre-line
   resize: none
-  line-height: 1.5
 
 button
   color: inherit

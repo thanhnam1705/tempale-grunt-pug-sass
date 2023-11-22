@@ -3,6 +3,13 @@
 @use "variables" as *
 @use "mixins" as *
 
+html
+  line-height: 1
+  opacity: 1
+  transition: opacity .3s ease
+  &:not(.is-visible)
+    opacity: 0
+
 body
   color: $color-default
   font-family: $font-sans
@@ -19,7 +26,7 @@ body
 
 .trans
   opacity: 1
-  transition: opacity .3s ease
+  transition: opacity .26s ease
   text-decoration: none
   &:hover
     opacity: .8
@@ -57,7 +64,7 @@ body
 +mobile
 
   html
-    font-size: calc(100vw / 3.75)
+    font-size: calc(100vw / 7.5)
     min-height: 100vh
 
   body
@@ -67,8 +74,8 @@ body
     min-width: 320px
 
   .wrapper
-    padding-left: .2rem
-    padding-right: .2rem
+    padding-left: .4rem
+    padding-right: .4rem
 
   .md
     display: none !important
