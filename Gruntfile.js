@@ -15,7 +15,7 @@ module.exports = function (grunt) {
         files: [{
           cwd: 'assets/pug/',
           src: ['**/*.pug', '!_*/*.pug'],
-          dest: './public/',
+          dest: './',
           expand: true,
           ext: '.html'
         }]
@@ -27,7 +27,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: 'assets/sass/',
           src: ['*.sass'],
-          dest: './public/css/',
+          dest: './css/',
           ext: '.css'
         }]
       }
@@ -37,42 +37,51 @@ module.exports = function (grunt) {
         expand: true,
         cwd: 'assets/js/',
         src: '*.js',
-        dest: './public/js/',
+        dest: './js/',
         ext: '.js'
       },
     },
     jshint: {
       all: ['assets/js/main.js']
     },
-    watch: {
-      html: {
-        files: 'assets/pug/**/*.pug',
-        tasks: ['pug']
-      },
-      css: {
-        files: 'assets/sass/**/*.sass',
-        tasks: ['sass']
-      },
-      js: {
-        files: ['assets/js/**/*.js'],
-        tasks: ['copy'],
-      },
-    },
     browserSync: {
       dev: {
         bsFiles: {
           src: [
-            'public/css/*.css',
-            'public/**/*.html',
-            'public/js/*.js'
+            './css/*.css',
+            './**/*.html',
+            './js/*.js',
           ]
         },
         options: {
           watchTask: true,
-          server: './public'
+          server: './'
         }
       }
-    }
+    },
+    watch: {
+      html: {
+        files: 'assets/pug/**/*.pug',
+        tasks: ['pug'],
+        options: {
+          livereload: true,
+        },
+      },
+      css: {
+        files: 'assets/sass/**/*.sass',
+        tasks: ['sass'],
+        options: {
+          livereload: true,
+        },
+      },
+      js: {
+        files: ['assets/js/**/*.js'],
+        tasks: ['copy'],
+        options: {
+          livereload: true,
+        },
+      },
+    },
   });
 
   // Load the plugin that provides the "uglify" task.
